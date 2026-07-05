@@ -1,1 +1,1 @@
-Hinh chup man hinh da lien ket Github
+Hoan thanh bai 1 lab 1
