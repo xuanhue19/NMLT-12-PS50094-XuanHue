@@ -39,7 +39,7 @@ int main ()
         else 
         {
             printf ("Cac so chia het cho 2 trong khoang [%d %d]: ", min, max);
-            for (i=min, i<=max,i++)
+            for (i=min; i<=max; i++)
 
         {
             if (i%2==0)
@@ -64,11 +64,45 @@ int main ()
             }
         }
         break;
-     }
         
         case 2:
      {
         printf ("Ban da chon chuc nang 2. \n");
+        int i;
+        int x;
+        int laSonguyento=1;
+
+        printf ("Nhap vao so nguyen x: \n");
+        scanf ("%d", &x);
+
+        if (x<2)
+        {
+         laSonguyento=0;
+        }
+        else 
+        {
+         for (i=2; i>x; i++)
+         {
+            if (x % i == 0)
+            {
+               laSonguyento=0;
+               break;
+            }
+
+         }
+        }
+
+        if (laSonguyento == 1)
+
+        {
+         printf ("%d laSonguyento\n", x);
+        }
+
+        else 
+        {
+         printf ("%d laSonguyento\n", x);
+        }
+
         break;
      }
 
