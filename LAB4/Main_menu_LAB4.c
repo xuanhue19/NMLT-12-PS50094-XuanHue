@@ -109,6 +109,37 @@ int main ()
         case 3:
      {
         printf ("Ban da chon chuc nang 3. \n");
+        int x;
+        int i;
+        int laSochinhphuong = 0;
+
+        printf ("Nhap vao so nguyen x: \n");
+        scanf ("%d", &x);
+
+        if (x<0)
+        {
+         printf ("%d khong phai la so chinh phuong \n", x);
+        }
+        else
+        {
+         for (i=0; i<=x; i++)
+         {
+            if (i * i == x)
+            {
+               laSochinhphuong = 1;
+               break;
+            }
+         }
+         if (laSochinhphuong == 1)
+         {
+            printf ("%d la so chinh phuong. \n", x);
+            printf("Vi %d = %d * %d.\n", x, i, i);
+         }
+         else
+         {
+            printf ("%d khong phai la so chinh phuong. \n",x);
+         }
+        }
         break;
      }
 
