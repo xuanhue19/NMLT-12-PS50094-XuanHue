@@ -107,6 +107,31 @@ void Chucnang1()
 
             void Chucnang2()
             {
+                int year;
+
+                printf ("Nhap so nam can kiem tra: \n");
+                scanf ("%d", &year);
+
+                if (checkYear(year) == 1)
+                {
+                    printf ("Nam nhuan. \n");
+                }
+                else 
+                {
+                    printf ("Nam khong nhuan. \n");
+                }
+            }
+
+             int checkYear(int year)
+             {
+                if (year % 400 == 0 ||( year % 4 == 0 && year % 100 != 0))
+                {
+                    return 1;
+                }
+                else 
+                {
+                    return 0;
+                }
 
             }
 
