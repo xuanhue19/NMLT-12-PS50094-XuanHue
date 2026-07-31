@@ -137,8 +137,30 @@ void Chucnang1()
 
             void Chucnang3()
             {
+                int a, b;
+                
+                printf ("Nhap so a: \n");
+                scanf ("%d", &a);
 
+                printf ("Nhap so b: \n");
+                scanf ("%d", &b);
+
+                printf ("Truoc khi hoan doi: a=%d, b=%d\n", a, b);
+
+                swap (&a, &b);
+
+                printf ("Sau khi hoan doi: a=%d, b=%d\n", a, b);
             }
+
+            void swap (int *a, int *b)
+            {
+                int temp;
+                temp = *a;
+                *a = *b;
+                *b = temp;
+            }
+
+
 
             void Chucnang4()
             {
