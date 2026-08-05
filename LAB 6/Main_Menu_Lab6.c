@@ -107,8 +107,8 @@ float tinhTrungBinhCong(int a[], int n)
     }
 }
 
-    void Chucnang1()
-    {
+void Chucnang1()
+{
     int n;
     int i;
     float tbc;
@@ -119,19 +119,19 @@ float tinhTrungBinhCong(int a[], int n)
 
     for (i = 0; i < n; i++)
     {
-        printf ("Nhap a[%d]: ", i);
-        scanf ("%d", &a[i]);
+        printf("Nhap a[%d]: ", i);
+        scanf("%d", &a[i]);
     }
 
-    tbc = tinhTrungBinhCong (a,n);
+    tbc = tinhTrungBinhCong(a, n);
 
     if (tbc == -FLT_MAX)
     {
-        printf ("Khong co so chia het cho 3 va 5. \n");
+        printf("Khong co so chia het cho 3 va 5. \n");
     }
-    else 
+    else
     {
-        printf ("Trung binh cong cua cac so chia het cho 3 va 5: %.2f\n", tbc);
+        printf("Trung binh cong cua cac so chia het cho 3 va 5: %.2f\n", tbc);
     }
 }
 
@@ -145,17 +145,16 @@ void timMaxMin(int a[], int n)
     {
         if (a[i] > Max)
         {
-        Max = a[i];
+            Max = a[i];
         }
         if (a[i] < Min)
-    {
-        Min = a[i];
+        {
+            Min = a[i];
+        }
     }
-}
 
-printf ("Gia tri lon nhat cua mang la: %d\n", Max);
-printf ("Gia tri nho nhat cua mang la: %d\n", Min);
-
+    printf("Gia tri lon nhat cua mang la: %d\n", Max);
+    printf("Gia tri nho nhat cua mang la: %d\n", Min);
 }
 
 void Chucnang2()
@@ -164,21 +163,61 @@ void Chucnang2()
     int n;
 
     printf("Ban da chon chuc nang 2. \n");
-    printf ("Nhap so phan tu cua mang: ");
-    scanf ("%d", &n);
+    printf("Nhap so phan tu cua mang: ");
+    scanf("%d", &n);
 
     int a[n];
     for (i = 0; i < n; i++)
     {
-        printf ("Nhap a[%d]: ", i);
-        scanf ("%d", &a[i]);
+        printf("Nhap a[%d]: ", i);
+        scanf("%d", &a[i]);
     }
-    timMaxMin (a,n);
+    timMaxMin(a, n);
+}
+
+void sapXepGiamDan(int a[], int n)
+{
+    int i;
+    int j;
+    int temp;
+
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (a[i] < a[j])
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+
+    printf("Mang sau khi duoc sap xep. \n");
+
+    for (i = 0; i < n; i++)
+    {
+        printf("a[%d] = %d\n", i, a[i]);
+    }
 }
 
 void Chucnang3()
 {
-    printf ("");
+    int n;
+    int i;
+
+    printf("Ban da chon chuc nang 3. \n");
+    printf("Nhap so phan tu cua mang: ");
+    scanf("%d", &n);
+
+    int a[n];
+    for (i = 0; i < n; i++)
+    {
+        printf("Nhap a[%d]: ", i);
+        scanf("%d", &a[i]);
+    }
+    sapXepGiamDan(a, n);
 }
 
 void Chucnang4()
