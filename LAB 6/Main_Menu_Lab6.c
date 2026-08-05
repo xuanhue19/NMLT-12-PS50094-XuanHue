@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <float.h>
-#define MAX 100
 
 void menu();
 void Chucnang1();
@@ -110,23 +109,13 @@ float tinhTrungBinhCong(int a[], int n)
 
     void Chucnang1()
     {
-    int a[MAX];
     int n;
     int i;
     float tbc;
 
     printf("Ban da chon chuc nang 1. \n");
 
-    do 
-    {
-        printf ("Nhap so phan tu cua mang: ");
-        scanf ("%d", &n);
-
-        if (n <= 0 || n > MAX)
-        {
-            printf ("So phan tu khong hop le! \n");
-        }
-    } while (n <= 0 || n > MAX);
+    int a[n];
 
     for (i = 0; i < n; i++)
     {
@@ -146,9 +135,45 @@ float tinhTrungBinhCong(int a[], int n)
     }
 }
 
+void timMaxMin(int a[], int n)
+{
+    int Max = a[0];
+    int Min = a[0];
+    int i;
+
+    for (i = 1; i < n; i++)
+    {
+        if (a[i] > Max)
+        {
+        Max = a[i];
+        }
+        if (a[i] < Min)
+    {
+        Min = a[i];
+    }
+}
+
+printf ("Gia tri lon nhat cua mang la: %d\n", Max);
+printf ("Gia tri nho nhat cua mang la: %d\n", Min);
+
+}
+
 void Chucnang2()
 {
+    int i;
+    int n;
+
     printf("Ban da chon chuc nang 2. \n");
+    printf ("Nhap so phan tu cua mang: ");
+    scanf ("%d", &n);
+
+    int a[n];
+    for (i = 0; i < n; i++)
+    {
+        printf ("Nhap a[%d]: ", i);
+        scanf ("%d", &a[i]);
+    }
+    timMaxMin (a,n);
 }
 
 void Chucnang3()
