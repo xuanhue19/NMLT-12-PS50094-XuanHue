@@ -273,20 +273,20 @@ void xuatSoLeMaTran(int row, int col)
 
     printf ("Nhap cac so nguyen cua ma tran: ");
 
-    for (i = 0; i < n; i++)
+    for (i = 0; i < row; i++)
     {
-        for (j = 0; j < n; j++)
+        for (j = 0; j < col; j++)
         {
-            printf ("Nhap a[%d][%d]: ", i, j)
+            printf ("Nhap a[%d][%d]: ", i, j);
             scanf ("%d", &a[i][j]);
         }
     }
 
     printf ("Cac so le trong ma tran: \n");
 
-    for (i = 0; i < n; i++)
+    for (i = 0; i < row; i++)
     {
-        for (j = 0; j < n; j++)
+        for (j = 0; j < col; j++)
         {
             if (a[i][j] % 2 != 0)
             {
@@ -309,5 +309,5 @@ void Chucnang5()
     printf ("Nhap so cot: ");
     scanf ("%d", &col);
 
-    xuatSoLeMaTran (a,n);
+    xuatSoLeMaTran (row ,col);
 }
