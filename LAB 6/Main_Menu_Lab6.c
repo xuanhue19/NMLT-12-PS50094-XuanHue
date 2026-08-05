@@ -265,6 +265,49 @@ void Chucnang4()
     maTranbinhphuong (row, col);
 }
 
+void xuatSoLeMaTran(int row, int col)
+{
+    int a[10][10];
+    int i;
+    int j;
+
+    printf ("Nhap cac so nguyen cua ma tran: ");
+
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            printf ("Nhap a[%d][%d]: ", i, j)
+            scanf ("%d", &a[i][j]);
+        }
+    }
+
+    printf ("Cac so le trong ma tran: \n");
+
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            if (a[i][j] % 2 != 0)
+            {
+                printf ("Phan tu le tai a[%d][%d]: ", i, j, a[i][j]);
+            }
+        }
+    }
+
+}
+
 void Chucnang5()
 {
+    int row;
+    int col;
+
+    printf ("Ban chon chuc nang 5. \n");
+
+    printf ("Nhap so hang: ");
+    scanf ("%d", &row);
+    printf ("Nhap so cot: ");
+    scanf ("%d", &col);
+
+    xuatSoLeMaTran (a,n);
 }
