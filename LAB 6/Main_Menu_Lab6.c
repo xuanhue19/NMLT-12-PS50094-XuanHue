@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <float.h>
+#define MAX 100
 
 void menu();
 void Chucnang1();
@@ -7,7 +9,7 @@ void Chucnang3();
 void Chucnang4();
 void Chucnang5();
 
-void tinhTrungBinhCong(int a[], int n);
+float tinhTrungBinhCong(int a[], int n);
 void timMaxMin(int a[], int n);
 void sapxepGiamdan(int a[], int n);
 void maTranbinhphuong(int row, int col);
@@ -38,31 +40,31 @@ int main()
 
         case 1:
         {
-            printf("Ban chon chuc nang 1: Tinh trung binh tong so chia het cho 3 va 5. \n");
+            Chucnang1();
             break;
         }
 
         case 2:
         {
-            printf("Ban chon chuc nang 2: Tim gia tri Lon nhat va Nho nhat trong Mang. \n");
+            Chucnang2();
             break;
         }
 
         case 3:
         {
-            printf("Ban chon chuc nang 3: Sap xep Mang theo thu tu Giam dan. \n");
+            Chucnang3();
             break;
         }
 
         case 4:
         {
-            printf("Ban chon chuc nang 4: Ma tran binh phuong (Mang 2 chieu). \n");
+            Chucnang4();
             break;
         }
 
         case 5:
         {
-            printf("Ban chon chuc nang 5: Loc va xuat vi tri So le trong Ma tran. \n");
+            Chucnang5();
             break;
         }
 
@@ -81,4 +83,83 @@ int main()
     } while (chon != 6);
 
     return 0;
+}
+
+float tinhTrungBinhCong(int a[], int n)
+{
+    int tong = 0;
+    int soDem = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] % 3 == 0 && a[i] % 5 == 0)
+        {
+            tong += a[i];
+            soDem++;
+        }
+    }
+
+    if (soDem == 0)
+    {
+        return -FLT_MAX;
+    }
+    else
+    {
+        return (float)tong / soDem;
+    }
+}
+
+    void Chucnang1()
+    {
+    int a[MAX];
+    int n;
+    int i;
+    float tbc;
+
+    printf("Ban da chon chuc nang 1. \n");
+
+    do 
+    {
+        printf ("Nhap so phan tu cua mang: ");
+        scanf ("%d", &n);
+
+        if (n <= 0 || n > MAX)
+        {
+            printf ("So phan tu khong hop le! \n");
+        }
+    } while (n <= 0 || n > MAX);
+
+    for (i = 0; i < n; i++)
+    {
+        printf ("Nhap a[%d]: ", i);
+        scanf ("%d", &a[i]);
+    }
+
+    tbc = tinhTrungBinhCong (a,n);
+
+    if (tbc == -FLT_MAX)
+    {
+        printf ("Khong co so chia het cho 3 va 5. \n");
+    }
+    else 
+    {
+        printf ("Trung binh cong cua cac so chia het cho 3 va 5: %.2f\n", tbc);
+    }
+}
+
+void Chucnang2()
+{
+    printf("Ban da chon chuc nang 2. \n");
+}
+
+void Chucnang3()
+{
+    printf ("");
+}
+
+void Chucnang4()
+{
+}
+
+void Chucnang5()
+{
 }
