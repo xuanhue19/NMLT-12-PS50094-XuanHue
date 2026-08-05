@@ -220,8 +220,49 @@ void Chucnang3()
     sapXepGiamDan(a, n);
 }
 
+void maTranbinhphuong(int row, int col)
+{
+    int a[10][10];
+    int i;
+    int j;
+
+    printf ("Nhap so phan tu cua ma tran: ");
+    
+    for (i = 0; i < row; i++)
+    {
+        for (j = 0; j < col; j++)
+        {
+            printf ("Nhap a[%d][%d]: ", i, j);
+            scanf ("%d", &a[i][j]);
+        }
+    }
+
+    printf ("Ma tran sau khi binh phuong: \n");
+
+    for (i = 0; i < row; i++)
+    {
+        for (j = 0; j < col; j++)
+        {
+            printf ("%d\t", a[i][j] * a[i][j]);
+        }
+
+        printf ("\n");
+
+    }
+}
+
 void Chucnang4()
 {
+    int row;
+    int col;
+
+    printf ("Ban da chon chuc nang 4. \n");
+    printf ("Nhap so  hang: ");
+    scanf ("%d", &row);
+    printf ("Nhap vao so cot: ");
+    scanf ("%d", &col);
+
+    maTranbinhphuong (row, col);
 }
 
 void Chucnang5()
